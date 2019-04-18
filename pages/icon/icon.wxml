@@ -1,0 +1,27 @@
+<!--pages/icon/icon.wxml-->
+<view style='font-size:16px; margin-left:40px;'>Icon</view>
+<view class='group'>
+  <block wx:for="{{iconSize}}" wx:key="{{index}}">
+    <icon type='success' size='{{item}}'></icon>
+  </block>
+</view>
+<view class='group'>
+  <block wx:for="{{iconType}}" wx:key="{{index}}">
+    <icon type='{{item}}' size='40'></icon>
+  </block>
+</view>
+<view class='group'>
+  <block wx:for="{{iconColor}}" wx:key="{{index}}">
+    <icon type='success' size='40' color='{{item}}'></icon>
+  </block>
+</view>
+<view style='font-size:16px;'>Text</view>
+<view>
+  <view>
+    <text>{{text}}</text>
+    <button bindtap='add'>add line</button>
+    <button bindtap='remove'>remove line</button>
+  </view>
+</view>
+<view style='font-size:16px;'>Progress</view>
+<progress percent="20" show-info></progress>

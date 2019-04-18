@@ -1,0 +1,11 @@
+/* pages/picker/picker.wxss */
+#vd-msg {
+  margin-top: 80rpx;
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  color: blue;
+  margin: 20px 0;
+}

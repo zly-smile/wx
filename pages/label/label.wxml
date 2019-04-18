@@ -1,0 +1,6 @@
+<!--pages/label/label.wxml-->
+<text>Label</text>
+<view>
+  <view>表单组件在label内</view>
+  
+</view>

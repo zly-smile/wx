@@ -1,0 +1,36 @@
+<!--pages/input/input.wxml-->
+<text style='font-size:16px; text-align: center;'>Input</text>
+<view class='section'>
+  <input placeholder='这是一个可以自动聚焦的input' auto-focus></input>
+</view>
+<view class='section'>
+  <input placeholder='这个只有在按钮点击时才会聚焦' focus='{{focus}}'></input>
+  <view class='btn-area'>
+    <button bindtap='bindButtonTap'>使得输入框获得焦点</button>
+  </view>
+</view>
+<view class='section'>
+  <input maxlength='10' placeholder='最大输入长度是10'></input>
+</view>
+<view class='section'>
+  <view>你输入的是：{{inputVal}}</view>
+  <input bindinput='bindKeyInput' placeholder='输入同步到view中'></input>
+</view>
+<view class="section">
+  <input  bindinput="bindReplaceInput" placeholder="连续的两个1会变成2" />
+</view>
+<view>
+  <input password type='number'></input>
+</view>
+<view>
+  <input password type='text'></input>
+</view>
+<view>
+  <input type='digit' placeholder='带小数点的数字键盘'></input>
+</view>
+<view>
+  <input type='idcard' placeholder='身份证输入键盘'></input>
+</view>
+<view>
+  <input placeholder-style='color:red;' placeholder='站字符字体是红色的'></input>
+</view>

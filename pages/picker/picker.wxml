@@ -1,0 +1,70 @@
+<!--pages/picker/picker.wxml-->
+<navigator url='../icon/icon'>跳转到icon页面</navigator>
+<view>isMarginTop = {{isMarginTop}}</view>
+<view id='vd-msg' wx:if="{{isMarginTop <= 10}}">小于10</view>
+<view wx:elif="{{isMarginTop > 10 && isMarginTop < 15 }}">大于10 小于15</view>
+<view class='.title' wx:else>大于15</view>
+<button bindtap='switchTitle'>切换标题</button>
+<view class="section">
+  <view class="section__title">普通选择器</view>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      当前选择：{{array[index]}}
+    </view>
+  </picker>
+</view>
+<view class="section">
+  <view class="section__title">多列选择器</view>
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      当前选择：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
+    </view>
+  </picker>
+</view>
+<view class="section">
+  <view class="section__title">时间选择器</view>
+  <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+    <view class="picker">
+      当前选择: {{time}}
+    </view>
+  </picker>
+</view>
+
+<view class="section">
+  <view class="section__title">日期选择器</view>
+  <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+    <view class="picker">
+      当前选择: {{date}}
+    </view>
+  </picker>
+</view>
+<view class="section">
+  <view class="section__title">省市区选择器</view>
+  <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+    <view class="picker">
+      当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}
+    </view>
+  </picker>
+</view>
+<view>
+  <template name="myTemplate">
+    <view>
+      <text>for: {{for}}</text>
+      <view><!-- 一个小技巧，用它来换行--></view>
+      <text>bar: {{bar}}</text>
+    </view>
+  </template>
+  <!-- 引用定义好的模板 -->
+  <template is="myTemplate" data="{{for: a, bar: b}}"></template>
+</view>
+
+<view class='.title'>九九乘法表</view>
+<view wx:for="{{[1, 2, 3,4,5,6,7,8,9]}}" wx:for-item="i">
+  <view wx:for="{{[1, 2, 3,4,5,6,7,8,9]}}" wx:for-item="j">
+    <view wx:if="{{ i <= j}}">
+    {{i}} * {{j}} = {{i * j}}
+    </view>
+  </view>
+</view>
+<!-- 进度条 -->
+<progress percent="80" show-info active></progress>
